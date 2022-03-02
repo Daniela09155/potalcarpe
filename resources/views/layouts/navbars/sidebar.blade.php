@@ -79,7 +79,7 @@
                             </a>
                             <ul class="vertical-submenu">
                                 <li><a href="{{ url('admin/horarios') }}"><i class="mdi mdi-circle"></i>Horarios Fijos</a></li>
-                                <li><a href="{{ url('admin/horariosf') }}"><i class="mdi mdi-circle"></i>Horarios Flexibles</a></li>
+                                <li><a href=""><i class="mdi mdi-circle"></i>Horarios Flexibles</a></li>
                             </ul>
                         </li>
                         @endcan

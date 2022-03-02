@@ -23,12 +23,12 @@ Route::get('/', function () {
     return view('landing');
 });
 
-
+Route::get('register',[RegisterController::class,'create'])->name('register');
+//rutas principales de las vistas 
 Route::get('index',[PrincipalController::class,'index'])->name('index');
-Route::get('login',[PrincipalController::class,'loguear'])->name('loguear');
 Route::get('admin/empleados',[PrincipalController::class,'empleados'])->name('empleados');
 Route::get('admin/horarios',[PrincipalController::class,'horarios'])->name('horarios');
-
+//Route::get('admin/hrflex',[PrincipalController::class,'hrflex'])->name('hrflex');
 Route::get('admin/solicitud',[PrincipalController::class,'solicitud'])->name('solicitud');
 Route::get('admin/informes',[PrincipalController::class,'informes'])->name('informes');
 Route::get('admin/calendario',[PrincipalController::class,'calendario'])->name('calendario');
@@ -48,10 +48,7 @@ Route::get('eliminarhorario/{id_horario}', [HorarioController::class, 'eliminarh
 Route::get('modificarh/{id_horario}', [HorarioController::class, 'modificarh'])->name('modificarh'); //Guarda el registro de horarios
 Route::post('guardarcambioh', [HorarioController::class, 'guardarcambioh'])->name('guardarcambioh'); //Guarda el registro de horarios
 
-// rutas para horarios flexibles
-Route::get('altahorariof',[HorariofController::class,'altahorariof'])->name('altahorariof');
-Route::post('guardarhorariof',[HorariofController::class,'guardarhorariof'])->name('guardarhorariof');
-Route::get('admin/horariosf',[HorariofController::class,'reportehorariof'])->name('horariosf');
+
 
 
 
@@ -59,7 +56,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::resource('/user','App\Http\Controllers\Backend\Role_User\UserController',['except'=>['create','store']])->names('user');
+Route::resource('/user','App\Http\Controllers\Backend\Role_User\UserController')->names('user');
 Route::resource('/role','App\Http\Controllers\Backend\Role_User\RoleController')->names('role');
 Route::resource('/category','App\Http\Controllers\Backend\Role_User\CategoryController')->names('category');
 Route::resource('/permission','App\Http\Controllers\Backend\Role_User\PermissionController')->names('permission');

@@ -153,7 +153,7 @@
           <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Horario:</label>
           <select class="form-control" id="exampleFormControlSelect2">
             <option selected>Selecciona una opción...</option>
-            <option value="1">Matutsino</option>
+            <option value="1">Matutino</option>
             <option value="2">Vespertino</option>
             <option value="3">Mixto</option>
           </select> 

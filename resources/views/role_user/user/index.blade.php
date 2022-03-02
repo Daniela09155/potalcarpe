@@ -11,6 +11,11 @@
                 <h2 class="text-center">
                     Lista de usuarios
                 </h2> 
+                <div>
+                    @can('haveaccess','user.create')
+                    <a href="{{route('user.create')}}" class="btn btn-primary">Crear</a>
+                    @endcan
+                </div>
             </div>
             <div class="card-body">
                 <table id="datablegeneral" class="table table-bordered table-striped dt-responsive">
