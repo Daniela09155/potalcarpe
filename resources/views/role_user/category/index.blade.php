@@ -1,9 +1,9 @@
 @section('content_header')
 <h4> Modulos </h4>
 @stop
-@extends('layouts.template')
+@extends('layouts.app')
 
-@section('content')
+@section('contenido')
 <div class="row">
     <div class="col-md-12 mt-3">
         <div class="card">
