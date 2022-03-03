@@ -4,6 +4,7 @@
    <h4> Reporte de empleados  </h4> 
 @stop
 
+
 @section('contenido')
 
 <div class="container">
@@ -24,6 +25,9 @@
    </div>
 
    <div class="container">
+     
+
+
       <div class="row">
           <div class="col-12">
               <br>
@@ -70,6 +74,7 @@
       </div>
   </div>
 </div>
+
 
   
 @stop

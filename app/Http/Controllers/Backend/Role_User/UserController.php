@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
+use Hash;
 
 class UserController extends Controller
 {
@@ -40,7 +41,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        Gate::authorize('haveaccess', 'user.create');
+     
+        $roles = Role::orderBy('name')->get();
+
+        return view('role_user.user.create', [
+            'roles' => $roles
+        ]);
     }
 
     /**
@@ -51,7 +58,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+        $userr = User::create($input);
+
+        if ($request->get('roles')) {
+            $userr->roles()->sync($request->get('roles'));
+        }
+
+
+        return redirect()->route('user.index')->with('status_success', 'Usuario creado');
     }
 
     /**

@@ -1,10 +1,9 @@
 <?php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PrincipalController;
-
+use App\Http\Controllers\HrFlexController;
 use App\Http\Controllers\HorarioController;
-use App\Http\Controllers\HorariofController;
+use App\Http\Controllers\PrincipalController;
 
 
 
@@ -23,12 +22,12 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('register',[RegisterController::class,'create'])->name('register');
+//rutas principales de las vistas 
 
-Route::get('index',[PrincipalController::class,'index'])->name('index');
-Route::get('login',[PrincipalController::class,'loguear'])->name('loguear');
 Route::get('admin/empleados',[PrincipalController::class,'empleados'])->name('empleados');
 Route::get('admin/horarios',[PrincipalController::class,'horarios'])->name('horarios');
-
+//Route::get('admin/hrflex',[PrincipalController::class,'hrflex'])->name('hrflex');
 Route::get('admin/solicitud',[PrincipalController::class,'solicitud'])->name('solicitud');
 Route::get('admin/informes',[PrincipalController::class,'informes'])->name('informes');
 Route::get('admin/calendario',[PrincipalController::class,'calendario'])->name('calendario');
@@ -49,9 +48,16 @@ Route::get('modificarh/{id_horario}', [HorarioController::class, 'modificarh'])-
 Route::post('guardarcambioh', [HorarioController::class, 'guardarcambioh'])->name('guardarcambioh'); //Guarda el registro de horarios
 
 // rutas para horarios flexibles
-Route::get('altahorariof',[HorariofController::class,'altahorariof'])->name('altahorariof');
-Route::post('guardarhorariof',[HorariofController::class,'guardarhorariof'])->name('guardarhorariof');
-Route::get('admin/horariosf',[HorariofController::class,'reportehorariof'])->name('horariosf');
+Route::get('altahrflex',[HrFlexController::class,'altahrflex'])->name('altahrflex');
+Route::post('guardarhrflex',[HrFlexController::class,'guardarhrflex'])->name('guardarhrflex');
+Route::get('admin/hrflex',[HrFlexController::class,'reportehrflex'])->name('hrflex');
+
+//Operaciones
+Route::get('desactivarhrflex/{id_horariof}', [HrFlexController::class, 'desactivarhrflex'])->name('desactivarhrflex');        //Desactiva horarios
+Route::get('activarhrflex/{id_horariof}', [HrFlexController::class, 'activarhrflex'])->name('activarhrflex');        //Activa horarios
+Route::get('eliminarhrflex/{id_horariof}', [HrFlexController::class, 'eliminarhrflex'])->name('eliminarhrflex');
+Route::get('modificarhrflex/{id_horariof}', [HrFlexController::class, 'modificarhrflex'])->name('modificarhrflex'); 
+Route::post('guardarcambiohrflex', [HrFlexController::class, 'guardarcambiohrflex'])->name('guardarcambiohrflex');  
 
 
 
@@ -59,7 +65,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::resource('/user','App\Http\Controllers\Backend\Role_User\UserController',['except'=>['create','store']])->names('user');
+Route::resource('/user','App\Http\Controllers\Backend\Role_User\UserController')->names('user');
 Route::resource('/role','App\Http\Controllers\Backend\Role_User\RoleController')->names('role');
 Route::resource('/category','App\Http\Controllers\Backend\Role_User\CategoryController')->names('category');
-Route::resource('/permission','App\Http\Controllers\Backend\Role_User\PermissionController')->names('permission');
+Route::resource('/permission','App\Http\Controllers\Backend\Role_User\PermissionController')->names('permission'); 
