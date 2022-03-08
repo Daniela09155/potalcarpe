@@ -39,4 +39,13 @@ class PrincipalController extends Controller
     public function loguear(){
         return view ('auth.login');
     }
+    public function asistencia(){
+        return view ('user.asistenciauser');
+    }
+    public function solicitudes(){
+        return view ('user.bandejasolicitudes');
+    }
+    public function estadisticas(){
+        return view ('user.estadisticasuser');
+    }
 }

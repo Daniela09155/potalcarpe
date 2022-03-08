@@ -48,7 +48,7 @@
                            
                         </li>
                         @endcan
-                        @canany('haveaccess',['empleado.index','informes.index', 'calendar.index', 'horarios.index'])
+                        @canany('haveaccess',['empleado.index','informes.index', 'calendar.index', 'horarios.index','bandejasolicitud.index'])
                         <li class="vertical-header">Control de asistencias</li>
                         @endcanany
                         @can('haveaccess','empleado.index')
@@ -79,17 +79,42 @@
                             </a>
                             <ul class="vertical-submenu">
                                 <li><a href="{{ url('admin/horarios') }}"><i class="mdi mdi-circle"></i>Horarios Fijos</a></li>
-                                <li><a href=""><i class="mdi mdi-circle"></i>Horarios Flexibles</a></li>
+                                <li><a href="#"><i class="mdi mdi-circle"></i>Horarios Flexibles</a></li>
                             </ul>
                         </li>
                         @endcan
+                        @can('haveaccess','bandejasolicitud.index')
+                        <li>
+                            <a href="{{ url('solicitudes') }}">
+                                <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
+                            </a>
+                        </li> 
+                        @endcan     
+                        @canany('haveaccess',['asistencia.index','estadisticas.index', 'solicitud.index'])
+                        <li class="vertical-header">Registro de Asistencias</li>
+                        @endcanany 
+                        @can('haveaccess','asistencia.index')
+                        <li>
+                            <a href="{{ url('asistencia') }}">
+                                <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Asistencia</span><i class="feather icon-chevron-right pull-right"></i></a>
+                            </a>
+                        </li> 
+                        @endcan 
+                        @can('haveaccess','estadisticas.index')
+                        <li>
+                            <a href="{{ url('estadisticas') }}">
+                                <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Estadisticas</span><i class="feather icon-chevron-right pull-right"></i></a>
+                            </a>
+                        </li> 
+                        @endcan   
                         @can('haveaccess','solicitud.index')
                         <li>
                             <a href="{{ url('admin/solicitud') }}">
                                 <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
                             </a>
                         </li> 
-                        @endcan                                  
+                        @endcan 
+                                                   
                     </ul>
                 </div>
                 <!-- End Profilebar -->

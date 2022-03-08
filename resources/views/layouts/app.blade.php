@@ -57,5 +57,27 @@
     <!-- Core js -->
     <script src="{{ asset('assets/js/core.js') }}"></script>
     <!-- End js -->
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{{ URL::to('assets2/css/bootstrap.min.css') }}">
+<!-- Fontawesome CSS -->
+<link rel="stylesheet" href="{{ URL::to('assets2/css/font-awesome.min.css') }}">
+<!-- Lineawesome CSS -->
+<link rel="stylesheet" href="{{ URL::to('assets2/css/line-awesome.min.css') }}">
+<!-- Select2 CSS -->
+<link rel="stylesheet" href="{{ URL::to('assets2/css/select2.min.css') }}">
+<!-- Datetimepicker CSS -->
+<link rel="stylesheet" href="{{ URL::to('assets2/css/bootstrap-datetimepicker.min.css') }}">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="{{ URL::to('assets2/css/style.css') }}">
+{{-- message toastr --}}
+<link rel="stylesheet" href="{{ URL::to('assets2/css/toastr.min.css') }}">
+<script src="{{ URL::to('assets2/js/toastr_jquery.min.js') }}"></script>
+<script src="{{ URL::to('assets2/js/toastr.min.js') }}"></script>
+
+@yield('scripts')
+
 </body>
 </html>

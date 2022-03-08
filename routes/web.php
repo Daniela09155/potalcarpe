@@ -32,7 +32,13 @@ Route::get('admin/horarios',[PrincipalController::class,'horarios'])->name('hora
 Route::get('admin/solicitud',[PrincipalController::class,'solicitud'])->name('solicitud');
 Route::get('admin/informes',[PrincipalController::class,'informes'])->name('informes');
 Route::get('admin/calendario',[PrincipalController::class,'calendario'])->name('calendario');
-
+Route::get('asistencia','App\Http\Controllers\AsistenciaController@index')->name('asistencia');
+Route::get('marcarE','App\Http\Controllers\AsistenciaController@createEntrada')->name('marcarE');
+Route::get('marcarS','App\Http\Controllers\AsistenciaController@createSalida')->name('marcarS');
+Route::get('marcarD','App\Http\Controllers\AsistenciaController@createDescanso')->name('marcarD');
+Route::get('marcarR','App\Http\Controllers\AsistenciaController@createRegreso')->name('marcarR');
+Route::get('solicitudes',[PrincipalController::class,'solicitudes'])->name('solicitudes');
+Route::get('estadisticas',[PrincipalController::class,'estadisticas'])->name('estadisticas');
 //Alta
 Route::get('altahorario',[HorarioController::class,'altahorario'])->name('altahorario');
 Route::post('guardarhorario',[HorarioController::class,'guardarhorario'])->name('guardarhorario');
