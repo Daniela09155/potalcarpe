@@ -138,7 +138,6 @@
    </div>
    
  </div>
-<<<<<<< HEAD
   
 
   <!-- Modal Asignaciones -->
@@ -182,12 +181,4 @@
   </div>
 </div>
 </div>
-=======
-</div>
-</div>
-
-
-
-
->>>>>>> alex_control
 @stop

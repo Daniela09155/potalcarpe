@@ -25,18 +25,13 @@ Route::get('/', function () {
 
 Route::get('register',[RegisterController::class,'create'])->name('register');
 //rutas principales de las vistas 
-<<<<<<< HEAD
 Route::get('index',[PrincipalController::class,'index'])->name('index');
-=======
-
->>>>>>> alex_control
 Route::get('admin/empleados',[PrincipalController::class,'empleados'])->name('empleados');
 Route::get('admin/horarios',[PrincipalController::class,'horarios'])->name('horarios');
 //Route::get('admin/hrflex',[PrincipalController::class,'hrflex'])->name('hrflex');
 Route::get('admin/solicitud',[PrincipalController::class,'solicitud'])->name('solicitud');
 Route::get('admin/informes',[PrincipalController::class,'informes'])->name('informes');
 Route::get('admin/calendario',[PrincipalController::class,'calendario'])->name('calendario');
-<<<<<<< HEAD
 Route::get('asistencia','App\Http\Controllers\AsistenciaController@index')->name('asistencia');
 Route::get('marcarE','App\Http\Controllers\AsistenciaController@createEntrada')->name('marcarE');
 Route::get('marcarS','App\Http\Controllers\AsistenciaController@createSalida')->name('marcarS');
@@ -44,10 +39,6 @@ Route::get('marcarD','App\Http\Controllers\AsistenciaController@createDescanso')
 Route::get('marcarR','App\Http\Controllers\AsistenciaController@createRegreso')->name('marcarR');
 Route::get('solicitudes',[PrincipalController::class,'solicitudes'])->name('solicitudes');
 Route::get('estadisticas',[PrincipalController::class,'estadisticas'])->name('estadisticas');
-=======
-Route::get('admin/solicitudcrear',[PrincipalController::class,'solicitudcrear'])->name('solicitudcrear');
-
->>>>>>> alex_control
 //Alta
 Route::get('altahorario',[HorarioController::class,'altahorario'])->name('altahorario');
 Route::post('guardarhorario',[HorarioController::class,'guardarhorario'])->name('guardarhorario');
@@ -63,9 +54,7 @@ Route::get('eliminarhorario/{id_horario}', [HorarioController::class, 'eliminarh
 Route::get('modificarh/{id_horario}', [HorarioController::class, 'modificarh'])->name('modificarh'); //Guarda el registro de horarios
 Route::post('guardarcambioh', [HorarioController::class, 'guardarcambioh'])->name('guardarcambioh'); //Guarda el registro de horarios
 
-<<<<<<< HEAD
 
-=======
 // rutas para horarios flexibles
 Route::get('altahrflex',[HrFlexController::class,'altahrflex'])->name('altahrflex');
 Route::post('guardarhrflex',[HrFlexController::class,'guardarhrflex'])->name('guardarhrflex');
@@ -77,7 +66,6 @@ Route::get('activarhrflex/{id_horariof}', [HrFlexController::class, 'activarhrfl
 Route::get('eliminarhrflex/{id_horariof}', [HrFlexController::class, 'eliminarhrflex'])->name('eliminarhrflex');
 Route::get('modificarhrflex/{id_horariof}', [HrFlexController::class, 'modificarhrflex'])->name('modificarhrflex'); 
 Route::post('guardarcambiohrflex', [HrFlexController::class, 'guardarcambiohrflex'])->name('guardarcambiohrflex');  
->>>>>>> alex_control
 
 //solicitudes 
 

@@ -79,18 +79,25 @@
                             </a>
                             <ul class="vertical-submenu">
                                 <li><a href="{{ url('admin/horarios') }}"><i class="mdi mdi-circle"></i>Horarios Fijos</a></li>
-<<<<<<< HEAD
-                                <li><a href="#"><i class="mdi mdi-circle"></i>Horarios Flexibles</a></li>
-=======
                                 <li><a href="{{ url('admin/hrflex') }}"><i class="mdi mdi-circle"></i>Horarios Flexibles</a></li>
->>>>>>> alex_control
                             </ul>
                         </li>
                         @endcan
+                        @can('haveaccess','solicitud.index')
+                        <li>
+                            <a href="{{ url('admin/solicitud') }}">
+                                <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
+                            </a>
+                            <ul class="vertical-submenu">
+                                <li><a href="{{ url('admin/solicitudcrear') }}"><i class="mdi mdi-circle"></i>Crear solicitud</a></li>
+                             
+                            </ul>
+                        </li> 
+                        @endcan 
                         @can('haveaccess','bandejasolicitud.index')
                         <li>
                             <a href="{{ url('solicitudes') }}">
-                                <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
+                                <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Filtro solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
                             </a>
                         </li> 
                         @endcan     
@@ -111,17 +118,7 @@
                             </a>
                         </li> 
                         @endcan   
-                        @can('haveaccess','solicitud.index')
-                        <li>
-                            <a href="{{ url('admin/solicitud') }}">
-                                <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
-                            </a>
-                            <ul class="vertical-submenu">
-                                <li><a href="{{ url('admin/solicitudcrear') }}"><i class="mdi mdi-circle"></i>Crear solicitud</a></li>
-                             
-                            </ul>
-                        </li> 
-                        @endcan 
+                        
                                                    
                     </ul>
                 </div>
