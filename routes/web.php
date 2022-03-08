@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HrFlexController;
 use App\Http\Controllers\HorarioController;
 use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\SolicitudController;
 
 
 
@@ -31,6 +32,7 @@ Route::get('admin/horarios',[PrincipalController::class,'horarios'])->name('hora
 Route::get('admin/solicitud',[PrincipalController::class,'solicitud'])->name('solicitud');
 Route::get('admin/informes',[PrincipalController::class,'informes'])->name('informes');
 Route::get('admin/calendario',[PrincipalController::class,'calendario'])->name('calendario');
+Route::get('admin/solicitudcrear',[PrincipalController::class,'solicitudcrear'])->name('solicitudcrear');
 
 //Alta
 Route::get('altahorario',[HorarioController::class,'altahorario'])->name('altahorario');
@@ -59,7 +61,12 @@ Route::get('eliminarhrflex/{id_horariof}', [HrFlexController::class, 'eliminarhr
 Route::get('modificarhrflex/{id_horariof}', [HrFlexController::class, 'modificarhrflex'])->name('modificarhrflex'); 
 Route::post('guardarcambiohrflex', [HrFlexController::class, 'guardarcambiohrflex'])->name('guardarcambiohrflex');  
 
+//solicitudes 
 
+Route::get('altasolicitud',[SolicitudController::class,'altasolicitud'])->name('altasolicitud');
+Route::post('savesolicitud',[SolicitudController::class,'savesolicitud'])->name('savesolicitud');
+Route::get('admin/solicitudcrear',[SolicitudController::class,'reportesolicitud1'])->name('solicitudcrear');
+Route::get('admin/reportesolicitud',[SolicitudController::class,'reportesolicitud2'])->name('reportesolicitud');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 

@@ -14,7 +14,7 @@ class HorarioController extends Controller
 {
     public function altahorario() //ordena los valores de la base de datos y le añade + 1 a los campos para que se agreguen
     {
-        $consulta = horario::orderBy('id_horario', 'ASC')
+        $consulta = horario::orderBy('id_horario', 'des')
                             ->get();
         $cuantos = count($consulta);
         if($cuantos==0)

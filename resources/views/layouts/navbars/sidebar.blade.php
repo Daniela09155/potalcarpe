@@ -88,6 +88,10 @@
                             <a href="{{ url('admin/solicitud') }}">
                                 <i class="ti-write" class="img-fluid" alt="widgets"></i><span>Solicitudes</span><i class="feather icon-chevron-right pull-right"></i></a>
                             </a>
+                            <ul class="vertical-submenu">
+                                <li><a href="{{ url('admin/solicitudcrear') }}"><i class="mdi mdi-circle"></i>Crear solicitud</a></li>
+                             
+                            </ul>
                         </li> 
                         @endcan                                  
                     </ul>

@@ -21,7 +21,7 @@ class HrFlexController extends Controller
             $idsigue = 1;
         }
         else{
-            $idsigue = $consulta[0]->id_horariof + 3;
+            $idsigue = $consulta[0]->id_horariof + 1;
         }
         return view('admin.hrflex')
                 ->with('idsigue', $idsigue);        
