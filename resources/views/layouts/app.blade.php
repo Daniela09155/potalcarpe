@@ -20,6 +20,8 @@
     <link href="{{asset ('assets/css/flag-icon.min.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset ('assets/css/style.css')}}" rel="stylesheet" type="text/css">
     
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
     @stack('horarios-style')
     <!-- fin de cabecera  -->
     </head>
@@ -35,7 +37,8 @@
         @endguest
         <!--   Core JS Files   -->
         <!-- Start js -->        
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+ 
+    <script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
@@ -56,6 +59,9 @@
     <script src="{{ asset('assets/js/custom/custom-dashboard-social.js') }}"></script>
     <!-- Core js -->
     <script src="{{ asset('assets/js/core.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.js"></script>
+   
     <!-- End js -->
 
 

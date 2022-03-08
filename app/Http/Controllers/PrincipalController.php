@@ -36,6 +36,12 @@ class PrincipalController extends Controller
     public function hrflex(){
         return view ('admin.hrflex');
     }
+<<<<<<< HEAD
+=======
+    public function solicitudcrear(){
+        return view ('admin.solicitudcrear');
+    }
+>>>>>>> alex_control
     public function loguear(){
         return view ('auth.login');
     }
